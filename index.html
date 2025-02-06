@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gala de XV Años - María Fernanda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+        <p class="loading-text">Cargando<span class="dots"></span></p>
+    </div>
+
+    <div id="invitation" class="hidden">
+        <header>
+            <div class="header-content">
+                <h1 class="main-title">Mis XV Años</h1>
+                <h2 class="subtitle">María Fernanda González</h2>
+            </div>
+        </header>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="#info" class="nav-link">Información</a></li>
+                <li><a href="#gallery" class="nav-link">Galería</a></li>
+                <li><a href="#schedule" class="nav-link">Programa</a></li>
+                <li><a href="#location" class="nav-link">Ubicación</a></li>
+                <li><a href="#rsvp" class="nav-link">Confirmar</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="info" class="section">
+                <h3 class="section-title">Te invito a celebrar</h3>
+                <p class="invitation-text">Con la bendición de Dios y de mis padres,<br>
+                te invito a ser parte de este día tan especial en mi vida.</p>
+                <div class="details">
+                    <p><i class="fas fa-calendar-alt"></i> 15 de Agosto, 2023</p>
+                    <p><i class="fas fa-clock"></i> 7:00 PM</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Salón de Eventos "El Edén"</p>
+                </div>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-item">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="days-circle" />
+                        </svg>
+                        <div class="countdown-number">
+                            <span id="days"></span>
+                            <span class="countdown-label">Días</span>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="hours-circle" />
+                        </svg>
+                        <div class="countdown-number">
+                            <span id="hours"></span>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="minutes-circle" />
+                        </svg>
+                        <div class="countdown-number">
+                            <span id="minutes"></span>
+                            <span class="countdown-label">Minutos</span>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="seconds-circle" />
+                        </svg>
+                        <div class="countdown-number">
+                            <span id="seconds"></span>
+                            <span class="countdown-label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="section">
+                <h3 class="section-title">Galería</h3>
+                <div class="swiper-container gallery-carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Quinceañera" class="gallery-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Celebración" class="gallery-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Baile" class="gallery-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1470319149473-4ee1a1f93611?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Vestido" class="gallery-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1551972873-b7e8754e8e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Fiesta" class="gallery-img">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+
+            <section id="schedule" class="section">
+                <h3 class="section-title">Programa del Evento</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 class="timeline-time">7:00 PM</h4>
+                            <p class="timeline-description">Recepción de invitados</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 class="timeline-time">8:00 PM</h4>
+                            <p class="timeline-description">Ceremonia religiosa</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 class="timeline-time">9:00 PM</h4>
+                            <p class="timeline-description">Cena de gala</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 class="timeline-time">10:00 PM</h4>
+                            <p class="timeline-description">Vals y baile</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 class="timeline-time">12:00 AM</h4>
+                            <p class="timeline-description">Brindis especial</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="location" class="section">
+                <h3 class="section-title">Ubicación</h3>
+                <div id="map"></div>
+            </section>
+
+            <section id="rsvp" class="section">
+                <h3 class="section-title">Confirma tu Asistencia</h3>
+                <form id="rsvpForm" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="attendance">¿Asistirás a la celebración?</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="si">Sí, asistiré</option>
+                            <option value="no">No podré asistir</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Confirmar</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">¡Espero contar con tu presencia en este día tan especial!</p>
+            <div class="social-icons">
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="Consu - A las hadas reunirán.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
