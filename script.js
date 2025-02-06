@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
               "¡Hola! Lamento no poder asistir a la celebración de XV años. ¡Que tengan una hermosa fiesta!",
             )
           }
-          window.location.href = `https://wa.me/1234567890?text=${message}`
+          window.location.href = `https://wa.me/524412822828?text=${message}`
         }, 2000)
       })
     }
