@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gala de XV Años - Ashely  Yajaira</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css">
+    <title>XV Años de Ashley Yajaira</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="script.min.js" defer></script>
 </head>
 <body>
     <div id="preloader">
@@ -23,7 +27,7 @@
         <header>
             <div class="header-content">
                 <h1 class="main-title">Mis XV Años</h1>
-                <h2 class="subtitle">Ashely  Yajaira</h2>
+                <h2 class="subtitle" id="quinceanera-name">Ashley Yajaira</h2>
             </div>
         </header>
 
@@ -32,65 +36,53 @@
                 <li><a href="#info" class="nav-link">Información</a></li>
                 <li><a href="#gallery" class="nav-link">Galería</a></li>
                 <li><a href="#schedule" class="nav-link">Programa</a></li>
-              
+                <li><a href="#rsvp" class="nav-link">Confirmar</a></li>
             </ul>
         </nav>
 
         <main>
             <section id="info" class="section">
-                <h3 class="section-title">Te invito a celebrar</h3>
-                <p class="invitation-text">Con la bendición de Dios y de mis padres,<br>
-                te invito a ser parte de este día tan especial en mi vida.</p>
+                <h3 class="section-title">Información</h3>
+                <p class="invitation-text">
+                    Te invito a celebrar conmigo este día tan especial en el que cumplo mis quince años.
+                </p>
                 <div class="details">
-                    <p><i class="fas fa-calendar-alt"></i> 26 de Abril, 2025</p>
-                    <p><i class="fas fa-clock"></i> Misa 3:15 PM</p>
-                    <p><i class="fas fa-church"></i> Capilla San Juan Diego</p>
+                    <p><strong>Fecha:</strong> 26 de Abril, 2025</p>
+                    <p><strong>Hora:</strong> 7:00 PM</p>
+                    <p><strong>Lugar:</strong> Salón de Eventos "El Edén"</p>
                 </div>
-                <div class="parents">
-                    <h4>Mis Padres</h4>
-                    <p>Roberto De La Cruz Martinez</p>
-                    <p>Evelia Gudiño</p>
-                </div>
-                <div id="countdown" class="countdown">
+                <div class="countdown" id="countdown">
                     <div class="countdown-item">
                         <svg class="countdown-svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
-                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="days-circle" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg"></circle>
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="days-circle"></circle>
                         </svg>
-                        <div class="countdown-number">
-                            <span id="days"></span>
-                            <span class="countdown-label">Días</span>
-                        </div>
+                        <div class="countdown-number" id="days"></div>
+                        <span class="countdown-label">Días</span>
                     </div>
                     <div class="countdown-item">
                         <svg class="countdown-svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
-                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="hours-circle" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg"></circle>
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="hours-circle"></circle>
                         </svg>
-                        <div class="countdown-number">
-                            <span id="hours"></span>
-                            <span class="countdown-label">Horas</span>
-                        </div>
+                        <div class="countdown-number" id="hours"></div>
+                        <span class="countdown-label">Horas</span>
                     </div>
                     <div class="countdown-item">
                         <svg class="countdown-svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
-                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="minutes-circle" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg"></circle>
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="minutes-circle"></circle>
                         </svg>
-                        <div class="countdown-number">
-                            <span id="minutes"></span>
-                            <span class="countdown-label">Minutos</span>
-                        </div>
+                        <div class="countdown-number" id="minutes"></div>
+                        <span class="countdown-label">Minutos</span>
                     </div>
                     <div class="countdown-item">
                         <svg class="countdown-svg" viewBox="0 0 100 100">
-                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg" />
-                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="seconds-circle" />
+                            <circle r="45" cx="50" cy="50" class="countdown-circle-bg"></circle>
+                            <circle r="45" cx="50" cy="50" class="countdown-circle" id="seconds-circle"></circle>
                         </svg>
-                        <div class="countdown-number">
-                            <span id="seconds"></span>
-                            <span class="countdown-label">Segundos</span>
-                        </div>
+                        <div class="countdown-number" id="seconds"></div>
+                        <span class="countdown-label">Segundos</span>
                     </div>
                 </div>
             </section>
@@ -100,19 +92,19 @@
                 <div class="swiper-container gallery-carousel">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Quinceañera" class="gallery-img">
+                            <img src="https://picsum.photos/seed/pic1/800/600" alt="Foto 1" class="gallery-img" loading="lazy">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Celebración" class="gallery-img">
+                            <img src="https://picsum.photos/seed/pic2/800/600" alt="Foto 2" class="gallery-img" loading="lazy">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Baile" class="gallery-img">
+                            <img src="https://picsum.photos/seed/pic3/800/600" alt="Foto 3" class="gallery-img" loading="lazy">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://images.unsplash.com/photo-1470319149473-4ee1a1f93611?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Vestido" class="gallery-img">
+                            <img src="https://picsum.photos/seed/pic4/800/600" alt="Foto 4" class="gallery-img" loading="lazy">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://images.unsplash.com/photo-1551972873-b7e8754e8e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Fiesta" class="gallery-img">
+                            <img src="https://picsum.photos/seed/pic5/800/600" alt="Foto 5" class="gallery-img" loading="lazy">
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -122,59 +114,72 @@
             </section>
 
             <section id="schedule" class="section">
-                <h3 class="section-title">Programa del Evento</h3>
+                <h3 class="section-title">Programa</h3>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4 class="timeline-time">7:00 PM</h4>
-                            <p class="timeline-description">Recepción de invitados</p>
+                            <h4 class="timeline-title">Ceremonia Religiosa</h4>
+                            <p class="timeline-text">Capilla San Juan Diego, 5:00 PM</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4 class="timeline-time">8:00 PM</h4>
-                            <p class="timeline-description">Ceremonia religiosa</p>
+                            <h4 class="timeline-title">Recepción</h4>
+                            <p class="timeline-text">Salón de Eventos "El Edén", 7:00 PM</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4 class="timeline-time">9:00 PM</h4>
-                            <p class="timeline-description">Cena de gala</p>
+                            <h4 class="timeline-title">Cena</h4>
+                            <p class="timeline-text">8:00 PM</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4 class="timeline-time">10:00 PM</h4>
-                            <p class="timeline-description">Vals y baile</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4 class="timeline-time">12:00 AM</h4>
-                            <p class="timeline-description">Brindis especial</p>
+                            <h4 class="timeline-title">Baile</h4>
+                            <p class="timeline-text">9:00 PM - 2:00 AM</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-          
-
-            
+            <section id="rsvp" class="section">
+                <h3 class="section-title">Confirma tu Asistencia</h3>
+                <form id="rsvpForm" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance">¿Asistirás?</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="si">Sí, asistiré</option>
+                            <option value="no">No podré asistir</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </section>
         </main>
 
-        
+        <footer class="footer">
+            <p class="footer-text">¡Espero contar con tu presencia en este día tan especial!</p>
+            <div class="social-icons">
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
     </div>
 
-    <audio id="bgMusic" loop>
-        <source src="Consu - A las hadas reunirán.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
+    <button id="playMusic" class="music-button">
+        <span class="music-icon">🎵</span>
+        <span class="music-text">Reproducir Música</span>
+    </button>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+    <audio id="bgMusic" preload="auto" loop>
+        <source src="Consu - A las hadas reunirán.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>
-
